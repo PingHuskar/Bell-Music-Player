@@ -66,11 +66,15 @@
   height: 30vh;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
+  -webkit-transform: skewX(-10deg) scale(0.9);
+          transform: skewX(-10deg) scale(0.9);
+  -webkit-filter: grayscale(0.7);
+          filter: grayscale(0.7);
 }
 
 .container .selector #selectBoard img:hover {
+  -webkit-transform: skewX(-10deg) scale(1.1);
+          transform: skewX(-10deg) scale(1.1);
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
 }

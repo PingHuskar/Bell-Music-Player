@@ -1,3 +1,4 @@
+$scaleImg : 0.9;
 * {
     margin: 0;
     padding: 0;
@@ -37,16 +38,19 @@
         line-height: 0;
         width: 90vw;
         #selectBoard {
+            
             img {
                 width: 30vw;
                 height: 30vh;
                 transition-duration: 0.5s;
+                transform: skewX(-10deg) scale($scaleImg);
                 // transform: scale(0.9);
                 // &:hover {
                 //     transform: scale(1.1);
                 // }
-                filter: grayscale(1);
+                filter: grayscale(0.7);
                 &:hover {
+                    transform: skewX(-10deg) scale(2-$scaleImg);
                     filter: grayscale(0);
                 }
             }
