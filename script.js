@@ -1,4 +1,5 @@
 function main(val,title) {
+  console.log(title)
     document.getElementById('frame').style.display = 'initial'
     val = val.replace("https://www.youtube.com/watch?v=","").replace("https://youtu.be/","")
     document.getElementById("frame").src = `https://www.youtube.com/embed/${val}`
@@ -17,7 +18,8 @@ const req = new XMLHttpRequest();
       let json = JSON.parse(req.responseText);
       let html = ``
       json.forEach(function(val) {
-        html += `<img src="https://img.youtube.com/vi/${val.vid}/maxresdefault.jpg" title="${val.title}" alt="${val.title}" onclick="topFunction();main('${val.vid}','${val.title}');this.style.filter=grayscale(0);"></a>`
+        console.log(val.title.replace("\'","\\'"))
+        html += `<img src="https://img.youtube.com/vi/${val.vid}/maxresdefault.jpg" title="${val.title}" alt="${val.title}" onclick="topFunction();main('${val.vid}','${val.title.replace("\'","")}');this.style.filter=grayscale(0);"></a>`
       });
       document.getElementById("selectBoard").innerHTML = html;
     }
